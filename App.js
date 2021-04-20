@@ -3,14 +3,15 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
+import LoginScreen from "./screens/LoginScreen";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <Text>HELLO! Is this thing finally working?!?!?!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <Stack.Screen name="Login" component={LoginScreen} />
     </NavigationContainer>
   );
 }
